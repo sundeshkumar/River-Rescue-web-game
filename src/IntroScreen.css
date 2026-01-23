@@ -1,0 +1,41 @@
+.intro-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0e6d2; /* Light beige background */
+    font-family: Arial, sans-serif;
+    
+    /* IMPORTANT: Shows the hand icon so users know to click */
+    cursor: pointer;
+    user-select: none; /* Prevents text highlighting */
+}
+
+.intro-image {
+    height: 80vh; /* Takes up 80% of screen height */
+    max-width: 95%;
+    border: 5px solid #4a3b2a;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    object-fit: contain;
+    background: white;
+    
+    /* Allows click to pass through to the container cleanly */
+    pointer-events: none; 
+}
+
+/* New Hint Text Style */
+.click-hint {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+    font-style: italic;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}

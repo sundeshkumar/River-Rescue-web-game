@@ -1,0 +1,142 @@
+/* --- CONTAINER --- */
+.water-game-wrapper {
+  display: flex;
+  gap: 15px; /* Reduced gap slightly for mobile */
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  
+  /* PREVENT SELECTION ON MOBILE TAP */
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* --- LEFT: SLIDER --- */
+.slider-container {
+  width: 80px;
+  height: 500px;
+  position: relative;
+  /* Ensure ruler-bg.png is in public/images/ */
+  background-image: url('/images/wasserstand_0.png'); 
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+/* The actual input slider (Hidden but clickable) */
+.slider-container input[type=range] {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px; /* Matches container height */
+  height: 50px;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  opacity: 20;
+  cursor: pointer;
+}
+
+/* Green Target Zone Marker */
+.target-zone {
+  position: absolute;
+  bottom: 20%;
+  height: 10%;
+  width: 100%;
+  background-color: rgba(0, 255, 0, 0.3);
+  border: 1px dashed green;
+  pointer-events: none;
+}
+
+/* --- GAME BOX (RIGHT) --- */
+.game-box {
+  position: relative;
+  width: 280px;  /* Narrower for mobile */
+  height: 450px; /* Shorter for mobile */
+  border: 4px solid #333;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #cceeff;
+}
+
+.river-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  display: block;
+}
+
+.bird {
+  position: absolute;
+  bottom: 90px;
+  left: 10px;
+  width: 80px; /* Smaller bird */
+  z-index: 10;
+}
+
+/* --- MESSAGES & POPUPS --- */
+.status-msg {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid #333;
+  border-radius: 10px;
+  z-index: 20;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.popup-overlay {
+  position: absolute;
+  top: 0px; left: 0;
+  width: 100%; height: 50%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 100;
+}
+
+.popup-box {
+  background: white;
+  width: 80%;
+  padding: 5px;
+  border-radius: 15px;
+  text-align: center;
+  border: 4px solid #FFD700;
+  animation: popIn 0.3s ease;
+}
+
+.ufergras-img { width: 30px; margin: 0px 0; }
+
+.action-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 0px;
+}
+
+/* --- MOBILE RESPONSIVENESS --- */
+/* If the screen is smaller than 450px (most phones) */
+@media (max-width: 450px) {
+  .water-game-wrapper {
+    /* Shrink the whole game to fit perfectly */
+    transform: scale(0.85); 
+  }
+}
+
+/* If screen is REALLY small (old phones) */
+@media (max-width: 360px) {
+  .water-game-wrapper {
+    transform: scale(0.75); 
+  }
+}

@@ -1,0 +1,49 @@
+.outro-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0e6d2; /* Beige background */
+  font-family: Arial, sans-serif;
+  text-align: center;
+  
+  /* IMPORTANT: Shows the hand icon so users know to click */
+  cursor: pointer; 
+}
+
+.outro-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #4a3b2a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  user-select: none; /* Prevents highlighting text when clicking */
+}
+
+.outro-image {
+  height: 65vh;
+  max-width: 90%;
+  border: 6px solid #4a3b2a;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  background: white;
+  object-fit: contain;
+  pointer-events: none; /* Allows click to pass through to container */
+}
+
+/* New Hint Text Style */
+.click-hint {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #666;
+  font-style: italic;
+  animation: blink 2s infinite;
+  user-select: none;
+}
+
+@keyframes blink {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
