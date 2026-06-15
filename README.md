@@ -77,7 +77,3 @@ Live URL: [https://leafy-pasca-5ff979.netlify.app/](https://leafy-pasca-5ff979.n
 ---
 *Built with ❤️ using React & Vite*
 =======
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
->>>>>>> 1c0417bdb372766c0479bf84d2be5c5b6d97f9fe
